@@ -76,7 +76,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # Telephony
 PRODUCT_PACKAGES += \
     OplusEsimSwitcher \
-    OplusEuicc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
@@ -89,9 +88,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oplus
 
 $(call soong_config_set,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
-
-# Exclude conflicting EuiccPolicy app (using hardware/oplus/Euicc instead)
-PRODUCT_PACKAGES := $(filter-out EuiccPolicy,$(PRODUCT_PACKAGES))
 
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8550-common/common.mk)
