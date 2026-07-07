@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
     OPlusSystemUIResTarget \
     OPlusWifiResTarget
 
+# Device Settings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Power
 $(call soong_config_set,qtipower,mode_ext_lib,power-ext-oplus)
 
