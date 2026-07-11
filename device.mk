@@ -17,11 +17,6 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2780
 TARGET_SCREEN_WIDTH := 1264
 
-DEXPREOPT_DISABLED_MODULES += \
-    com.oplus.camera.unit.sdk \
-    com.oplus.camera.unit.sdk.adapter
-
-
 # Display
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/displayconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946607878435459.xml
@@ -100,11 +95,3 @@ $(call inherit-product, device/oneplus/sm8550-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/aston/aston-vendor.mk)
-
-# OPlus Camera (global 12R stack)
-$(call inherit-product-if-exists, vendor/oplus/camera/camera-vendor.mk)
-
-# APS P010 over-walk fix (GOT-interposer loaded into com.oplus.camera via libAlgoProcess.so
-# DT_NEEDED — see device/oneplus/astonc/apsfixup + extract-files.py .add_needed).
-PRODUCT_PACKAGES += \
-    libapsfixup
