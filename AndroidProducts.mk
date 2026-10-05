@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/custom_aston.mk
+    $(LOCAL_DIR)/voltage_aston.mk
